@@ -64,11 +64,16 @@ public class MainActivity extends AppCompatActivity {
                     JSONObject jsonRootObj = new JSONObject(jsonString);
 
                     // TODO: Get the JSON Array node and name it "pokemons"
-
+                    JSONArray pokemons = jsonRootObj.getJSONArray("pokemon");
 
                     // looping through all Contacts
                     for (int i = 0; i < pokemons.length(); i++) {
                         //TODO: get the JSONObject and its three attributes
+                        JSONObject currentObjArrayPosition = pokemons.getJSONObject(i);
+
+                        String name = currentObjArrayPosition.getString("name");
+                        String id = currentObjArrayPosition.getString("id");
+                        String candy = currentObjArrayPosition.getString("candy");
 
                         // tmp hash map for a single pokemon
                         HashMap<String, String> pokemon = new HashMap<>();
