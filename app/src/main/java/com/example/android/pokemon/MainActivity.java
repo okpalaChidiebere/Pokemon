@@ -10,7 +10,9 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -48,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
             String jsonString = "";
             try {
                 // TODO: make a request to the URL
+                URL urlObject = createUrl(url);
+                jsonString = sh.makeHttpRequest(urlObject);
 
             } catch (IOException e) {
                 return null;
@@ -64,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
                     // looping through all Contacts
                     for (int i = 0; i < pokemons.length(); i++) {
                         //TODO: get the JSONObject and its three attributes
-
 
                         // tmp hash map for a single pokemon
                         HashMap<String, String> pokemon = new HashMap<>();
