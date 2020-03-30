@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+                            //i got this error when i had not added my app internet permission in manifest file or if my phone is in airplane mode
                             Toast.makeText(getApplicationContext(),
                                     "Json parsing error: " + e.getMessage(),
                                     Toast.LENGTH_LONG).show();
